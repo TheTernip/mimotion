@@ -132,6 +132,7 @@ class MiMotionRunner:
             "token": "access"
         }
         r1 = requests.post(url1, data=data1, headers=login_headers, allow_redirects=False)
+        print(r1)
         if r1.status_code != 303:
             self.log_str += "登录异常，status: %d\n" % r1.status_code
             return 0, 0
