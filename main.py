@@ -145,7 +145,7 @@ class MiMotionRunner:
             self.log_str += f"获取accessToken异常:{traceback.format_exc()}\n"
             return 0, 0
         # print("access_code获取成功！")
-        # print(code)
+        print(code)
 
         url2 = "https://account.huami.com/v2/client/login"
         if self.is_phone:
@@ -176,9 +176,10 @@ class MiMotionRunner:
                 "third_name": "email",
             }
         r2 = requests.post(url2, data=data2, headers=login_headers).json()
+        print(r2)
         login_token = r2["token_info"]["login_token"]
         # print("login_token获取成功！")
-        # print(login_token)
+        print(login_token)
         userid = r2["token_info"]["user_id"]
         # print("userid获取成功！")
         # print(userid)
